@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 <div class="container">
-    <h1>
-        <?php echo the_title(); ?>
-    </h1>
-    <p>
-        <?php get_template_part("includes/section", "content"); ?>
-    </p>
+    <h1><?php the_title(); ?></h1>
+    <?php get_template_part("includes/section", "content"); ?>
 </div>
 <?php get_footer(); ?>
