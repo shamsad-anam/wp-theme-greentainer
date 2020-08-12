@@ -4,17 +4,13 @@
 */
 ?>
 
-
 <?php get_header(); ?>
 <div class="container">
     <div class="text-center">
         <h1><?php the_title(); ?></h1>
-
         <?php
         get_template_part("includes/section", "content");
         ?>
-
-
     </div>
     <div class="w-75 mx-auto">
         <form action="">
