@@ -9,7 +9,4 @@
 </head>
 
 <body>
-
-    <header>
-
-    </header>
+    <h6 class="bg-info py-2 text-white text-center">This page has a secondary header</h6>
