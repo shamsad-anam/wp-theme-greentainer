@@ -3,3 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+ul {
+  list-style: none;
+}
+
+header {
+  .menu-top-bar-container {
+    max-width: 80%;
+    margin: 0 auto;
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      li {
+        padding: 0.5rem 1rem;
+        a {
+          color: rgb(68, 66, 66);
+          font-weight: 600;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
