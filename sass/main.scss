@@ -14,13 +14,49 @@ header {
     margin: 0 auto;
     .top-bar {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
+      padding-right: 1.5rem;
+      .menu-icon {
+        width: 12px;
+        height: auto;
+        margin-left: 5px;
+      }
       li {
         padding: 0.5rem 1rem;
+        position: relative;
         a {
-          color: rgb(68, 66, 66);
-          font-weight: 600;
-          font-size: 1rem;
+          color: #000;
+          font-weight: 500;
+        }
+        .sub-menu {
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          top: 80%;
+          left: 0;
+          width: 110%;
+          background: #f4f4f4;
+          border-radius: 0.5rem;
+          transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          li a .menu-icon {
+            transform: rotateZ(-90deg);
+          }
+          .sub-menu {
+            top: 10%;
+            left: 30%;
+
+            li a .menu-icon {
+              transform: rotateZ(0);
+            }
+          }
+        }
+        &:hover > ul {
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+          .sub-menu {
+            left: 95%;
+          }
         }
       }
     }

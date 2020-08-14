@@ -18,17 +18,62 @@ header .menu-top-bar-container .top-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 1.5rem;
+}
+
+header .menu-top-bar-container .top-bar .menu-icon {
+  width: 12px;
+  height: auto;
+  margin-left: 5px;
 }
 
 header .menu-top-bar-container .top-bar li {
   padding: 0.5rem 1rem;
+  position: relative;
 }
 
 header .menu-top-bar-container .top-bar li a {
-  color: #444242;
-  font-weight: 600;
-  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
+}
+
+header .menu-top-bar-container .top-bar li .sub-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 110%;
+  background: #f4f4f4;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+header .menu-top-bar-container .top-bar li .sub-menu li a .menu-icon {
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+
+header .menu-top-bar-container .top-bar li .sub-menu .sub-menu {
+  top: 10%;
+  left: 30%;
+}
+
+header .menu-top-bar-container .top-bar li .sub-menu .sub-menu li a .menu-icon {
+  -webkit-transform: rotateZ(0);
+          transform: rotateZ(0);
+}
+
+header .menu-top-bar-container .top-bar li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+header .menu-top-bar-container .top-bar li:hover > ul .sub-menu {
+  left: 95%;
 }
