@@ -16,7 +16,6 @@
         wp_nav_menu(array(
             "theme_location" => "top-menu",
             "menu_class" => "top-bar",
-            "link_after" => "<img class='menu-icon' src='" . get_template_directory_uri() . "/images/arrow-down.png'/>"
         ));
         ?>
 
