@@ -59,3 +59,20 @@ header {
     }
   }
 }
+
+footer {
+  padding: 1rem 0;
+  background-color: #3f3b3b;
+}
+
+.footer-bar {
+  margin-bottom: 0;
+
+  a {
+    color: #fff;
+    font-weight: 500;
+  }
+  li > ul {
+    margin-left: 1rem;
+  }
+}
