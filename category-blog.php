@@ -1,7 +1,9 @@
-<?php get_header("secondary"); ?>
+<?php get_header(""); ?>
 <div class="container">
-    <h5 class="text-muted">From Default Archive Template</h5>
-
+    <h5 class="text-muted">From Category Blog Template</h5>
+    <h6 class="bg-warning my-2 p-2">
+        Category : Blog
+    </h6>
     <div class="row">
         <!-- this template part contains the loop  -->
         <?php get_template_part("includes/section", "archive"); ?>
