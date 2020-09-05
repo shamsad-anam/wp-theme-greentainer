@@ -11,8 +11,9 @@
 
     <!-- the pagination - previous and next -->
 
-    <?php the_posts_pagination(array(
-        "class" => "my-pagination"
-    )) ?>
+    <?php echo the_posts_pagination(array(
+        "screen_reader_text" => "Navigation for posts",
+        "class" => "c-pagination"
+    )); ?>
 </div>
 <?php get_footer(); ?>

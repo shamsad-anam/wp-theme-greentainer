@@ -1,8 +1,8 @@
 <?php get_header(""); ?>
 <div class="container">
-    <h5 class="text-muted">From Category Tech Template</h5>
-    <h6 class="bg-warning my-2 p-2">
-        Category : Tech
+    <h6 class="text-muted"><span class="h6 text-info">File: </span>category-blog.php</h6>
+    <h6 class="badge badge-info py-2">
+        Category : <?php single_cat_title(); ?>
     </h6>
     <div class="row">
         <!-- this template part contains the loop  -->
@@ -10,9 +10,10 @@
     </div>
 
     <!-- the pagination - previous and next -->
-    <div class="text-right py-2">
-        <?php previous_posts_link(); ?>
-        <?php next_posts_link(); ?>
-    </div>
+
+    <?php echo the_posts_pagination(array(
+        "screen_reader_text" => "Navigation for posts",
+        "class" => "c-pagination"
+    )); ?>
 </div>
 <?php get_footer(); ?>
