@@ -16,6 +16,7 @@ if (have_posts()) :
          ?>
               <div class="card-body">
                   <a href="<?php the_permalink() ?>"><h3><?php the_title(); ?></h3></a>
+                  <div class="card-archive-category"><?php the_category(); ?></div>
                   <?php
                   // the_content(); this shows whole content
                   the_excerpt(); //this shows a portion of the content and [...]

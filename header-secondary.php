@@ -9,4 +9,10 @@
 </head>
 
 <body>
-    <h6 class="bg-info py-2 text-white text-center">This page has a secondary heading</h6>
+  <div class="bg-info py-2 text-white text-center">
+    <h6>This page has a secondary heading</h6>
+    <p class="lead">
+      Header secondary is whatever you put in header-secondary.php file. To call this header use get_header("secondary");
+    </p>
+  </div>
+    

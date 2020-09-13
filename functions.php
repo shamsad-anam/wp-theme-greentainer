@@ -24,6 +24,7 @@ add_action("wp_enqueue_scripts", "load_js");
 //theme options
 add_theme_support("menus");
 add_theme_support("post-thumbnails");
+add_theme_support("widgets");
 
 //menus
 register_nav_menus(array(
@@ -36,3 +37,26 @@ register_nav_menus(array(
 add_image_size("post-large", 800, 400, true);
 add_image_size("post-small", 300, 200, true);
 add_image_size("post-tiny", 150, 150, true); //HOW To use this??
+
+
+//Register Sidebars
+function my_sidebar(){
+  register_sidebar(
+    array(
+      "name" => "Page Side Bar",
+      "id" => "page-sidebar",
+      "before_title" => "<h5 class='widget-title'>",
+      "after_title" => "</h5>"
+    )
+  );
+  register_sidebar(
+    array(
+      "name" => "Blog Side Bar",
+      "id" => "blog-sidebar",
+      "before_title" => "<h5 class='widget-title'>",
+      "after_title" => "</h5>"
+    )
+  );
+}
+
+add_action("widgets_init", "my_sidebar");

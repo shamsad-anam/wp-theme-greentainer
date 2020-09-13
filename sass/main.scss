@@ -21,6 +21,10 @@ ul {
   list-style: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 header {
   .menu-top-bar-container {
     max-width: 80%;
@@ -43,17 +47,20 @@ header {
           font-weight: 500;
         }
         &.menu-item-has-children .sub-menu {
-          z-index: 9;
           opacity: 0;
           visibility: hidden;
           position: absolute;
           top: 80%;
           left: 0;
-          width: 110%;
+          white-space: nowrap;
+          width: auto;
           background: #f4f4f4;
           border-radius: 0.5rem;
           transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+          // box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+          & .menu-item {
+            padding-right: 2.5rem;
+          }
 
           & > .menu-item-has-children .sub-menu {
             top: 10%;
@@ -65,9 +72,10 @@ header {
         opacity: 1;
         visibility: visible;
         top: 100%;
+
         .menu-item-has-children:hover .sub-menu {
           top: 10%;
-          left: 95%;
+          left: 100%;
         }
       }
     }
@@ -148,6 +156,27 @@ footer {
         background-color: var(--primary);
         box-shadow: 1px 2px 10px rgba(0, 123, 255, 0.5);
         color: var(--white);
+      }
+    }
+  }
+}
+
+//sidebar styles
+
+.sidebar-map {
+  max-width: 100%;
+}
+
+.card-archive-category {
+  ul {
+    display: inline-flex;
+    margin-bottom: 0;
+    li {
+      padding: 0.2rem 0;
+      padding-right: 0.5rem;
+      a {
+        font-size: 16px;
+        font-family: "Futura Md Bt";
       }
     }
   }
