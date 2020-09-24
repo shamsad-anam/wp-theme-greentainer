@@ -30,7 +30,7 @@ add_theme_support("widgets");
 register_nav_menus(array(
     "top-menu" => "Top Menu Location",
     "mobile-menu" => "Mobile Menu Location",
-    "footer-menu" => "Footer Menu Location"
+    "footer-menu" => "Footer Menu Location",
 ));
 
 //Custom Image Sizes
@@ -60,3 +60,38 @@ function my_sidebar(){
 }
 
 add_action("widgets_init", "my_sidebar");
+
+//custom post type
+function my_post_type(){
+  $args = array(
+    "labels" => array(
+      "name" => "Cars",
+      "singular_name" => "Car",
+    ),
+    "public" => true,
+    "has_archive" => true,
+    "menu_icon" => "dashicons-car",
+    "supports" => array("title", "editor", "thumbnail"),
+  );
+  register_post_type("cars", $args);
+  //this 'cars' will be the suffix of this post type's single and archive page
+}
+
+add_action("init", "my_post_type");
+
+//taxonomy for custom post type
+
+function my_taxonomy(){
+  $args = array(
+    "labels" => array(
+      "name" => "Brands",
+      "singular_name" => "Brand",
+    ),
+    "public" => true,
+    "hierarchical" => true,
+  );
+
+  register_taxonomy("brands", array("cars"), $args);
+}
+
+add_action("init", "my_taxonomy"); 

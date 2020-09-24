@@ -1,4 +1,4 @@
-<?php get_header(""); ?>
+<?php get_header(); ?>
 <div class="container">
     <h6 class="text-muted"><span class="h6 text-info">File: </span>category-blog.php</h6>
     <h6 class="badge badge-info py-2">

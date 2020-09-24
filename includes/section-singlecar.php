@@ -1,5 +1,5 @@
 <!-- This loop is for single posts -->
-<h5 class="text-muted"><span class="h5 text-info">File: </span>section-singlepost.php</h5>
+<h5 class="text-muted"><span class="h5 text-info">File: </span>section-singlecar.php</h5>
 
 <?php 
   if(have_posts()):
