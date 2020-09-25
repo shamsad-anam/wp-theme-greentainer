@@ -71,7 +71,7 @@ function my_post_type(){
     "public" => true,
     "has_archive" => true,
     "menu_icon" => "dashicons-car",
-    "supports" => array("title", "editor", "thumbnail"),
+    "supports" => array("title", "editor", "thumbnail", "custom-fields"),
   );
   register_post_type("cars", $args);
   //this 'cars' will be the suffix of this post type's single and archive page

@@ -181,3 +181,45 @@ footer {
     }
   }
 }
+
+// ********* BADGES **********
+.my-badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  margin: 10px;
+  &-Black {
+    background-color: #000;
+  }
+  &-Blue {
+    background-color: rgb(124, 124, 255);
+  }
+}
+
+.thumb-badge-area {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+}
+
+.badge-featured {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  margin: 0 5px;
+  background-color: rgb(255, 229, 83);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-new {
+  @extend .badge-featured;
+  width: 50px;
+  background-color: rgb(69, 255, 69);
+}

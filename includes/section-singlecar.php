@@ -11,13 +11,26 @@
          <h2 class="post__title">
            <?php the_title(); ?>
          </h2>
-         <?php 
-          if(has_post_thumbnail()):
+         <div class="position-relative">
+          <?php 
+            if(has_post_thumbnail()):
+            ?>
+            <img src="<?php the_post_thumbnail_url("post-large") ?>" alt="<?php the_title()?>" class="img-fluid img-thumbnail">
+            <?php
+              $car_featured = get_post_meta($post->ID, "Featured", true);
+              $car_new = get_post_meta($post->ID, "New", true);
+            ?>
+              <div class="thumb-badge-area">
+                <?php if($car_featured == "1"): ?>
+                  <div class="badge-featured">Featured</div>
+                <?php endif;?>
+                <?php if($car_new == "1"): ?>
+                  <div class="badge-new">New</div>
+                <?php endif;?>
+              </div>
+          <?php endif;
           ?>
-          <img src="<?php the_post_thumbnail_url("post-large") ?>" alt="<?php the_title()?>" class="img-fluid img-thumbnail">
-          <?php
-          endif;
-         ?>
+         </div>
          <p class="post__info">
            <h5 class="post__author">
              Posted by: <?php echo get_the_author_meta("first_name")." ".get_the_author_meta("last_name");?>
@@ -49,15 +62,26 @@
             </ul>
           <?php endif; ?>
           <h3>Related Tags</h3>
-          <ul class="navbar-nav">
+       
           <?php 
             $tags = get_the_tags();
-            if($tags) :
-            foreach($tags as $tag):?>
-              <li class="nav-item">
-                <a href="<?php echo get_tag_link($tag->term_id)?>" class="nav-link"><?php echo $tag->name; ?></a>
-              </li>
-            <?php endforeach; endif;?>
+            if($tags) : ?>
+               <ul class="navbar-nav">
+                <?php foreach($tags as $tag):?>
+                  <li class="nav-item">
+                    <a href="<?php echo get_tag_link($tag->term_id)?>" class="nav-link"><?php echo $tag->name; ?></a>
+                  </li>
+                <?php endforeach;?>
+               </ul>
+            <?php endif; ?>
+          <h3>Car Details</h3>
+          <?php 
+            $car_color = get_post_meta($post->ID, "Color", true);
+            $car_model = get_post_meta($post->ID, "Model", true);
+          ?>
+          <ul class="navbar-nav">
+            <li class="nav-item d-flex align-items-center">Color: <span class="my-badge my-badge-<?php echo $car_color?>"></span><?php echo $car_color?></li>
+            <li class="nav-item"> Model: <?php echo $car_model?></li>
           </ul>
         </div>
       </div>
